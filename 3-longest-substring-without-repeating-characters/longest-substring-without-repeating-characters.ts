@@ -3,9 +3,7 @@ function lengthOfLongestSubstring(s: string): number {
   let longest = 0
 
   for (const char of s) {
-    console.log(scanner)
     const possibleIndex = scanner.indexOf(char)
-    console.log(char, possibleIndex)
     if (possibleIndex !== -1) { scanner.splice(0, possibleIndex + 1) }
     scanner.push(char)
     longest = Math.max(longest, scanner.length)
