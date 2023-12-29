@@ -1,20 +1,20 @@
 function lengthOfLongestSubstring(s: string): number {
     let index = 0;
-    const strSet = new Set()
+    let strSet = []
     let allSets = []
 
     if(s.length <= 1) return s.length;
 
     while(index < s.length) {
-        if(strSet.has(s[index])) {
-            allSets.push(strSet.size)
-            if(strSet.size>=2) index-=strSet.size-1
-            strSet.clear()
+        if(strSet.includes(s[index])) {
+            allSets.push(strSet.length)
+            if(strSet.length>=2) index-=strSet.length-1
+            strSet = []
         } else {
-            strSet.add(s[index])
+            strSet.push(s[index])
             index++
         }
     }
 
-    return Math.max(...allSets, strSet.size)
+    return Math.max(...allSets, strSet.length)
 };
