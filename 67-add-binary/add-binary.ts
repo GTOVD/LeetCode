@@ -73,19 +73,19 @@ function addBinary(a: string, b: string): string {
     return total
 };
 
-// Bonus function
-const convertBinary = (n: number, binaryTree = 
-{}): number => {
-    let binaryPower = 1
-    while( binaryPower<=n ) {
-        binaryTree[binaryPower] = 0;
-        binaryPower*=2
-    }
-    binaryTree[binaryPower/2] = 1;
+// // Bonus function
+// const convertBinary = (n: number, binaryTree = 
+// {}): number => {
+//     let binaryPower = 1
+//     while( binaryPower<=n ) {
+//         binaryTree[binaryPower] = 0;
+//         binaryPower*=2
+//     }
+//     binaryTree[binaryPower/2] = 1;
 
-    let remainder = n - binaryPower/2
+//     let remainder = n - binaryPower/2
 
-    if(remainder>=1) convertBinary(remainder, binaryTree)
+//     if(remainder>=1) convertBinary(remainder, binaryTree)
 
-    return +Object.values(binaryTree).reverse().join('')
-}
+//     return +Object.values(binaryTree).reverse().join('')
+// }
