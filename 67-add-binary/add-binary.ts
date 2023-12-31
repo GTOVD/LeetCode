@@ -1,6 +1,16 @@
 function addBinary(a: string, b: string): string {
-    // return (BigInt('0b'+a) + BigInt('0b'+b)).toString(2)
+    // return oneLiner(a, b);
 
+    return humanStyle(a, b);
+};
+
+// oneLiner
+const oneLiner = (a: string, b: string): string => {
+    return (BigInt('0b'+a) + BigInt('0b'+b)).toString(2);
+}
+
+// Human By Hand Style
+const humanStyle = (a: string, b: string): string => {
     // reverse strings
     if(b.length > a.length) return addBinary(b,a);
     if(a === '0' && b === '0') return '0'
@@ -71,21 +81,21 @@ function addBinary(a: string, b: string): string {
     }
 
     return total
-};
+}
 
-// // Bonus function
-// const convertBinary = (n: number, binaryTree = 
-// {}): number => {
-//     let binaryPower = 1
-//     while( binaryPower<=n ) {
-//         binaryTree[binaryPower] = 0;
-//         binaryPower*=2
-//     }
-//     binaryTree[binaryPower/2] = 1;
+// Bonus function
+const convertBinary = (n: number, binaryTree = 
+{}): number => {
+    let binaryPower = 1
+    while( binaryPower<=n ) {
+        binaryTree[binaryPower] = 0;
+        binaryPower*=2
+    }
+    binaryTree[binaryPower/2] = 1;
 
-//     let remainder = n - binaryPower/2
+    let remainder = n - binaryPower/2
 
-//     if(remainder>=1) convertBinary(remainder, binaryTree)
+    if(remainder>=1) convertBinary(remainder, binaryTree)
 
-//     return +Object.values(binaryTree).reverse().join('')
-// }
+    return +Object.values(binaryTree).reverse().join('')
+}
