@@ -5,9 +5,9 @@ function mySqrt(x: number): number {
 
     // return equationSqrt(x);
 
-    // return iteratingSqrt(x);
+    return iteratingSqrt(x);
 
-    return binarySearchSqrt(x);
+    // return binarySearchSqrt(x);
 };
 
 const equationSqrt = (x: number): number => {
@@ -19,9 +19,13 @@ const equationSqrt = (x: number): number => {
 const iteratingSqrt = (x: number): number => {
     if(x < 2) return x;
 
-    x*x === x
+    let i = 0;
 
-    return x
+    while(i*i <= x) {
+        i++
+    }
+
+    return i-1;
 }
 
 const binarySearchSqrt = (x: number): number => {
