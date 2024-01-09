@@ -1,7 +1,10 @@
 function generate(numRows: number): number[][] {
-    let results = []
+    if (numRows === 1) return [[1]]
+    if (numRows === 2) return [[1], [1, 1]]
+    
+    let results = [[1], [1, 1]]
 
-    for(let i = 1; i<=numRows; i++) {
+    for(let i = 3; i<=numRows; i++) {
         results.push(new Array(i).fill(1))
     }
 
