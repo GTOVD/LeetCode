@@ -17,8 +17,8 @@ function preorderTraversal(root: TreeNode | null, result = []): number[] {
 
     result.push(root.val)
 
-    let left = preorderTraversal(root.left, result)
-    let right = preorderTraversal(root.right, result)
+    preorderTraversal(root.left, result)
+    preorderTraversal(root.right, result)
 
     return result
 };
