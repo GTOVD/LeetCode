@@ -13,10 +13,47 @@
  */
 
 function postorderTraversal(root: TreeNode | null): number[] {
+    // return recursiveSolution(root);
+    
+    return recursive2Solution(root);
+
+    // return iterativeSolution(root);
+};
+
+const recursiveSolution = (root) => {
     if(!root) return [] 
 
-    let left = postorderTraversal(root.left)
-    let right = postorderTraversal(root.right)
+    let left = recursiveSolution(root.left)
+    let right = recursiveSolution(root.right)
 
     return [...left, ...right, root.val]
-};
+}
+
+const recursive2Solution = (root, result = []) => {
+    if(!root) return [] 
+
+    recursive2Solution(root.left, result)
+    recursive2Solution(root.right, result)
+
+    result.push(root.val)
+
+    return result
+}
+
+const iterativeSolution = (root) => {
+    const result = [];
+    const stack = [root];
+
+    while (stack.length) {
+        const node = stack.pop()
+
+        if(node) {
+            result.push(node.val);
+
+            stack.push(node.left, node.right);
+        }
+    }
+
+    return result.reverse()
+}
+
