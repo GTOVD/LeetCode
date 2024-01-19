@@ -1,14 +1,17 @@
 function majorityElement(nums: number[]): number {
-    let candidate;
-    let count = 0;
+    nums.sort()
+    return nums[Math.floor(nums.length/2)];
     
-    for (const num of nums) {
-        if (count === 0) {
-            candidate = num;
-        }
+    // let candidate;
+    // let count = 0;
+    
+    // for (const num of nums) {
+    //     if (count === 0) {
+    //         candidate = num;
+    //     }
         
-        count += (num === candidate) ? 1 : -1
-    }
+    //     count += (num === candidate) ? 1 : -1
+    // }
     
-    return candidate;
+    // return candidate;
 };
