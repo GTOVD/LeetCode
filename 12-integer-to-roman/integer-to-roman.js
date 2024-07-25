@@ -21,13 +21,13 @@ var intToRoman = function(num) {
     let ans = ''
 
     for(let letter in romen) {
-        console.log(letter)
         while(num>=romen[letter]) {
             ans = ans+letter
             num -= romen[letter]
         }
     }
 
+    return ans;
 /*
     while(num > 0) {
         console.log(num)
@@ -98,6 +98,5 @@ var intToRoman = function(num) {
         }
     }
 */
-    return ans;
 };
 
