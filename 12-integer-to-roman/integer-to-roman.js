@@ -4,22 +4,31 @@
  */
 var intToRoman = function(num) {
     const romen = {
-        i: 1,
-        iv: 4,
-        v: 5,
-        ix: 9,
-        x: 10,
-        xl: 40,
-        l: 50,
-        xc: 90,
-        c: 100,
-        cd: 400,
-        d: 500,
-        cm: 900,
-        m: 1000,
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1,
     }
     let ans = ''
 
+    for(let letter in romen) {
+        console.log(letter)
+        while(num>=romen[letter]) {
+            ans = ans+letter
+            num -= romen[letter]
+        }
+    }
+
+/*
     while(num > 0) {
         console.log(num)
         if(num >= romen['m']) {
@@ -88,7 +97,7 @@ var intToRoman = function(num) {
             continue
         }
     }
-
+*/
     return ans;
 };
 
