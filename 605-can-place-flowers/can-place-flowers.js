@@ -7,7 +7,6 @@ var canPlaceFlowers = function(flowerbed, n) {
     let openPos = 0
     if(flowerbed.length <= 1 && flowerbed[0] === 0) return n <= 1 ? true : false
     for(let i=0; i<flowerbed.length-1; i++) {
-        console.log(i)
         if(i===0 && flowerbed[0] === 0 && flowerbed[1] === 0) {
             if(flowerbed.length === 3 && flowerbed[1] === 0 && flowerbed[2] === 0) openPos++
             openPos++
@@ -23,6 +22,5 @@ var canPlaceFlowers = function(flowerbed, n) {
             openPos++
         }
     }
-    console.log(openPos)
     return n <= openPos ? true : false
 };
