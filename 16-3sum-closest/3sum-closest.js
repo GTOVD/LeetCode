@@ -4,6 +4,10 @@
  * @return {number}
  */
 var threeSumClosest = function(nums, target) {
+    return bruteForce(nums, target)
+};
+
+const bruteForce = (nums, target) => {
     let result = Infinity
     let resultSum
     for(let i=0; i<nums.length-2; i++) {
@@ -19,4 +23,4 @@ var threeSumClosest = function(nums, target) {
         }
     }
     return resultSum
-};
+}
