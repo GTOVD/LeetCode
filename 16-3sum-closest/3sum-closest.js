@@ -4,7 +4,27 @@
  * @return {number}
  */
 var threeSumClosest = function(nums, target) {
-    return bruteForce(nums, target)
+    nums.sort((a,b)=>a-b)
+    let result=Infinity, resultSum
+    for(let i=0; i<nums.length-2; i++) {
+        let left = i+1
+        let right = nums.length-1
+        while(left<right) {
+            let sum = nums[i]+nums[left]+nums[right]
+            let dif = Math.abs(target-sum)
+            if(dif<result) {
+                result = dif
+                resultSum = sum
+            }
+            if(sum<target) {
+                left++
+            } else {
+                right--
+            }
+        }
+    }
+    return resultSum
+    // return bruteForce(nums, target)
 };
 
 const bruteForce = (nums, target) => {
