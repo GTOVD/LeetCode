@@ -20,7 +20,6 @@ var letterCombinations = function(digits) {
     const result = []
 
     const backtrack = (index, comb) => {
-        console.log({index, comb, result})
         if(index === digits.length) {
             result.push(comb)
             return
